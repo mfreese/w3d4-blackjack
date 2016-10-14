@@ -31,14 +31,15 @@ class Card
         face == "J"
         self.value = 10
       else
-        self.value = face_to.i
+        self.value = face.to_i
       end
       def + (other)
-        self.value > self.value (other)
-      else
-        self.value < self.value (other)
+        self.value + other.value
       end
     end
+  def to_s
+    "a #{face} of #{suit}"
+  end
 end
 
   # card_one = Card.new ("J", "Hearts")

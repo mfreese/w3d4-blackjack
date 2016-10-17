@@ -1,6 +1,11 @@
 require_relative 'deck'
 class BlackJack
-  attr_accessor :game, :player_hand, :dealer_hand, :full_deck, :player_score, :dealer_score
+  attr_accessor :game,
+                :player_hand,
+                :dealer_hand,
+                :full_deck,
+                :player_score,
+                :dealer_score
 
   def initialize
     self.full_deck = Deck.new

@@ -43,14 +43,14 @@ class BlackJack
     dealer_turn
   end
 
-  def hit or stay
+  def hit_or_stay
     unless blackjack || bust
       puts 'Do You Want To Hit or Stay?'
       desire = gets.chomp.downcase
       player_hit if desire == 'hit'
     end
   end
-  
+
   def player_total
     self.player_score = player_hand.reduce(0) { |sum, card| sum + card.value }
   end
@@ -77,11 +77,7 @@ class BlackJack
       puts player_hand
       player_total
       puts player_score
-      unless bust
-        puts 'Do You Want To Hit Again?'
-        another = gets.chomp.downcase
-        player_hit if another == 'hit'
-      end
+      hit_or_stay
     end
   end
 

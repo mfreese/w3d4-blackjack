@@ -43,11 +43,11 @@ class BlackJack
   end
 
   def player_total
-    self.player_score = player_hand.reduce (0) { |sum, card| sum + card.value }
+    self.player_score = player_hand.reduce(0) { |sum, card| sum + card.value }
   end
 
   def dealer_total
-    self.dealer_score = dealer_hand.reduce (0) { |sum, card| sum + card.value }
+    self.dealer_score = dealer_hand.reduce(0) { |sum, card| sum + card.value }
   end
 
   def blackjack

@@ -34,8 +34,7 @@ class BlackJack
     dealer_hand
     puts "You have #{player_score}  #{show_hand}"
     puts "Dealer is showing #{dealer_hand[1]}"
-    unless
-      blackjack || bust
+    unless blackjack || bust
       puts 'Do You Want To Hit or Stay?'
       desire = gets.chomp.downcase
       player_hit if desire == 'hit'

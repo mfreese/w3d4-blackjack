@@ -23,11 +23,7 @@ class Card
   def face_value
     if face == 'A'
       11
-    elsif face == 'K'
-      10
-    elsif face == 'Q'
-      10
-    elsif face == 'J'
+    elsif face == ('K' || 'Q' || 'J')
       10
     else
       face.to_i

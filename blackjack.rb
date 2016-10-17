@@ -39,14 +39,18 @@ class BlackJack
     dealer_hand
     puts "You have #{player_score}  #{show_hand}"
     puts "Dealer is showing #{dealer_hand[1]}"
+    hit_or_stay
+    dealer_turn
+  end
+
+  def hit or stay
     unless blackjack || bust
       puts 'Do You Want To Hit or Stay?'
       desire = gets.chomp.downcase
       player_hit if desire == 'hit'
     end
-    dealer_turn
   end
-
+  
   def player_total
     self.player_score = player_hand.reduce(0) { |sum, card| sum + card.value }
   end

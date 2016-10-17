@@ -23,19 +23,15 @@ class Card
   def face_value
     if face == 'A'
       11
-    elsif face == 'K'
-      10
-    elsif face == 'Q'
-      10
-    elsif face == 'J'
+    elsif %w(K Q J).include? face
       10
     else
       face.to_i
     end
+  end
 
-    def +(other)
-      value + other.value
-    end
+  def +(other)
+    value + other.value
   end
 
   def to_s

@@ -11,9 +11,9 @@ class Deck
     suit = %w(Hearts Diamonds Spades Clubs)
     self.card_box = []
 
-    face.each do |face|
-      suit.each do |suit|
-        card_box << Card.new(face, suit)
+    face.each do |f|
+      suit.each do |s|
+        card_box << Card.new(f, s)
       end
     end
   end

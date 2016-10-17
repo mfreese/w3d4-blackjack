@@ -44,11 +44,10 @@ class BlackJack
   end
 
   def hit_or_stay
-    unless blackjack || bust
-      puts 'Do You Want To Hit or Stay?'
-      desire = gets.chomp.downcase
-      player_hit if desire == 'hit'
-    end
+    return if blackjack || bust
+    puts 'Do You Want To Hit or Stay?'
+    desire = gets.chomp.downcase
+    player_hit if desire == 'hit'
   end
 
   def player_total
@@ -72,13 +71,12 @@ class BlackJack
   end
 
   def player_hit
-    unless bust
-      player_hand << full_deck.deal_cards
-      puts player_hand
-      player_total
-      puts player_score
-      hit_or_stay
-    end
+    return if bust
+    player_hand << full_deck.deal_cards
+    puts player_hand
+    player_total
+    puts player_score
+    hit_or_stay
   end
 
   def show_hand
@@ -88,10 +86,9 @@ class BlackJack
   def dealer_turn
     dealer_total
     return if dealer_bust
-    if dealer_score < 16
-      dealer_hit
-      dealer_turn
-    end
+    return unless dealer_score < 16
+    dealer_hit
+    dealer_turn
   end
 
   def rematch

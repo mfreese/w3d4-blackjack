@@ -87,18 +87,16 @@ class BlackJack
 
   def dealer_turn
     dealer_total
-    unless dealer_bust
-      if dealer_score < 16
-        dealer_hit
-        dealer_turn
-      end
+    return if dealer_bust
+    if dealer_score < 16
+      dealer_hit
+      dealer_turn
     end
   end
 
   def rematch
     puts 'Want a REMATCH?'
-    rematch = gets.chomp.downcase
-    if rematch == 'y'
+    if gets.chomp.casecmp == 'y'
       play
     else
       exit

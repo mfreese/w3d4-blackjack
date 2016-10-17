@@ -113,8 +113,8 @@ class BlackJack
   def results
     if blackjack puts 'YOU WIN!!!'
     elsif bust puts 'YOU LOSE'
-    elsif player_total > dealer_total {puts 'YOU WIN!!!'}
-    elsif player_total == dealer_total {puts 'YOU WIN!!!'}
+    elsif player_total > dealer_total { puts 'YOU WIN!!!' }
+    elsif player_total == dealer_total { puts 'YOU WIN!!!' }
     elsif dealer_bust puts 'YOU WIN!!!'
     else puts 'YOU LOSE'
     end

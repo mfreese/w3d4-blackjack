@@ -93,7 +93,7 @@ class BlackJack
 
   def rematch
     puts 'Want a REMATCH?'
-    if gets.chomp.casecmp == 'y'
+    if gets.chomp.downcase == 'y'
       play
     else
       exit
@@ -106,12 +106,18 @@ class BlackJack
   end
 
   def results
-    if blackjack puts 'YOU WIN!!!'
-    elsif bust puts 'YOU LOSE'
-    elsif player_total > dealer_total { puts 'YOU WIN!!!' }
-    elsif player_total == dealer_total { puts 'YOU WIN!!!' }
-    elsif dealer_bust puts 'YOU WIN!!!'
-    else puts 'YOU LOSE'
+    if blackjack
+      puts 'YOU WIN!!!'
+    elsif bust
+      puts 'YOU LOSE'
+    elsif player_total > dealer_total
+      puts 'YOU WIN!!!'
+    elsif player_total == dealer_total
+      puts 'YOU WIN!!!'
+    elsif dealer_bust
+      puts 'YOU WIN!!!'
+    else
+      puts 'YOU LOSE'
     end
   end
 end

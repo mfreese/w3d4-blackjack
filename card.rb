@@ -32,11 +32,10 @@ class Card
     else
       face.to_i
     end
-
+  end
     def +(other)
       value + other.value
     end
-  end
 
   def to_s
     "a #{face} of #{suit}"
